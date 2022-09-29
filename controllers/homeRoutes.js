@@ -27,14 +27,21 @@ router.get('/post', withAuth, async (req, res) => {
 // Get a single post
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
-    console.log("sjm id" + req.params.id);
-    const postData = await Post.findByPk(req.params.id, {
-      include: [{ model: User }],
+    const postData = await Post.findOne({
+      where: {
+        id: req.params.id,
+       },
+      include: [{ model: User }, { model: Comment }],
     });
-    console.log("postData:" + postData);
 
-    const posts = postData.map((post) => post.get({ plain: true }));
-    console.log("posts:" + posts);
+    if (!postData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect username or password, please try again' });
+      return;
+    }
+
+    const posts = postData.get({ plain: true });
 
     res.render('singlepost', {
       ...posts,
