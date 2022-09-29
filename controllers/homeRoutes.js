@@ -25,12 +25,16 @@ router.get('/post', withAuth, async (req, res) => {
 });
 
 // Get a single post
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
   try {
+    console.log("sjm id" + req.params.id);
     const postData = await Post.findByPk(req.params.id, {
-      include: [{ model: User }, { model: Comment }],
+      include: [{ model: User }],
     });
+    console.log("postData:" + postData);
+
     const posts = postData.map((post) => post.get({ plain: true }));
+    console.log("posts:" + posts);
 
     res.render('singlepost', {
       ...posts,
