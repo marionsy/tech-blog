@@ -1,35 +1,40 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../models'); 
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Get all posts for homepage
 router.get('/', async (req, res) => {
   try {
-      const postData = await Post.findAll({
-        include: [{ model: User }],
-      });
-      const posts = postData.map((post) => post.get({ plain: true }));
+    const postData = await Post.findAll({
+      include: [{ model: User }],
+    });
+    const posts = postData.map((post) => post.get({ plain: true }));
 
-      res.render('homepage', { 
-      posts, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// Return page for a new post
+router.get('/post', withAuth, async (req, res) => {
+  res.render('createpost');
+});
+
 // Get a single post
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      include: [{ model: User }, {model: Comment }],
+      include: [{ model: User }, { model: Comment }],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
 
-      res.render('singlepost', { 
-      ...posts, 
-      logged_in: req.session.logged_in 
+    res.render('singlepost', {
+      ...posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);

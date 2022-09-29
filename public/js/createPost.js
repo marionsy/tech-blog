@@ -2,9 +2,9 @@ const postFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#post-title').value.trim();
-  const body = document.querySelector('#content').value.trim();
+  const post_body = document.querySelector('#content').value.trim();
 
-  if (title && body) {
+  if (title && post_body) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/posts', {
       method: 'POST',
