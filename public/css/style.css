@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -10,6 +13,10 @@ header, .project:not(:last-child) {
 
 .wrapper{
   max-width: 1200px;
+}
+
+.link, h2 {
+  font-family: 'Montserrat';
 }
 
 .no-button {
@@ -30,6 +37,7 @@ header, .project:not(:last-child) {
 .logo:link{
   color: black;
   text-decoration: none;
+  font-family: 'Montserrat';
 }
 
 .logo:visited{
@@ -80,10 +88,11 @@ header, .project:not(:last-child) {
   padding: 15px;
   margin-top: 0;
   text-align: left;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .post-title a:link{
-  color: #617ab7;
+  color: #030305;
   text-decoration: none;
 }
 
@@ -100,6 +109,11 @@ header, .project:not(:last-child) {
 .post-content{
   padding: 10px !important;
   text-align: left !important;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.post-body {
+  background-color: white;
 }
 
 .post-button{
@@ -196,7 +210,3 @@ header, .project:not(:last-child) {
   margin: 20px 0;
 }
 
-footer{
-  margin-top: 60px;
-  font-size: 1.4em;
-}

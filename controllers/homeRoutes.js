@@ -27,25 +27,40 @@ router.get('/post', withAuth, async (req, res) => {
 // Get a single post
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findOne({
-      where: {
-        id: req.params.id,
-       },
-      include: [{ model: User }, { model: Comment }],
+    const postData = await Post.findByPk(req.params.id, {
+      attributes: [
+        'id',
+        'title',
+        'post_body',
+        'date_created',
+      ],
+      include: [
+        {
+          model: User,
+          attributes: [
+            'username',
+          ],
+        },
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'comment_body',
+            'date_created',
+            'user_id',
+            'post_id',
+          ],
+        },
+      ],
     });
 
-    if (!postData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect username or password, please try again' });
-      return;
-    }
+    const post = postData.get({ plain: true });
 
-    const posts = postData.get({ plain: true });
-
-    res.render('singlepost', {
-      ...posts,
-      logged_in: req.session.logged_in
+    res.render('singlepost', { 
+      post,
+      loggedIn: req.session.loggedIn 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -71,6 +86,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Get route to edit post
+
 
 // Get route to login
 router.get('/login', (req, res) => {
