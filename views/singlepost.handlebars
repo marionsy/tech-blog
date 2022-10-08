@@ -1,6 +1,8 @@
 <section class="single-post-container">
 {{> post-info post}}
 
+{{> comment post.comments}}
+
 {{#if logged_in}}
 <div class="comment-container">
     <h3 class="card-header"></h3>
@@ -13,8 +15,6 @@
     </form>
 </div>
 {{/if}}
-
-{{> comment post.comments}}
 
 </section>
 

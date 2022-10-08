@@ -1,11 +1,12 @@
 const commentFormHandler = async (event) => {
   event.preventDefault();
 
-  const comment = document.querySelector('#comment').value.trim();
+  const comment_body = document.querySelector('#comment').value.trim();
+  const post_id = document.querySelector('.post-title').getAttribute('post-id');
 
-  if (comment) {
+  if (comment_body && post_id) {
     // Send a POST request to the API endpoint
-    const response = await fetch('/api/comment', {
+    const response = await fetch('/api/comments', {
       method: 'POST',
       body: JSON.stringify({ post_id, comment_body }),
       headers: { 'Content-Type': 'application/json' },
@@ -13,7 +14,7 @@ const commentFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/dashboard');
+      document.location.replace('/post/' + post_id);
     } else {
       alert(response.statusText);
     }
@@ -21,5 +22,5 @@ const commentFormHandler = async (event) => {
 };
 
 document
-  .querySelector('#comment')
+  .querySelector('#comment-form')
   .addEventListener('submit', commentFormHandler);

@@ -41,22 +41,23 @@ router.get('/post/:id', withAuth, async (req, res) => {
             'username',
           ],
         },
-      ],
-      include: [
         {
           model: Comment,
-          attributes: [
-            'id',
-            'comment_body',
-            'date_created',
-            'user_id',
-            'post_id',
+          include: [
+            {
+              model: User,
+              attributes: [
+                'username',
+              ],
+            },
           ],
         },
       ],
     });
 
     const post = postData.get({ plain: true });
+
+    console.log('sjm POSt ' + JSON.stringify(post));
 
     res.render('singlepost', { 
       post,
