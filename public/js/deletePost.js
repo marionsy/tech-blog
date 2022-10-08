@@ -1,13 +1,12 @@
-const commentFormHandler = async (event) => {
+const deleteFormHandler = async (event) => {
   event.preventDefault();
 
-  const comment = document.querySelector('#comment').value.trim();
+  const id = document.querySelector('#post-title').getAttribute("post-id");
 
-  if (comment) {
+  if (id) {
     // Send a POST request to the API endpoint
-    const response = await fetch('/api/comment', {
-      method: 'POST',
-      body: JSON.stringify({ post_id, comment_body }),
+    const response = await fetch('/api/posts/' + id, {
+      method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -21,5 +20,5 @@ const commentFormHandler = async (event) => {
 };
 
 document
-  .querySelector('#comment')
-  .addEventListener('submit', commentFormHandler);
+  .querySelector('.delete-post-btn')
+  .addEventListener('click', deleteFormHandler);

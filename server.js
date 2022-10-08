@@ -15,13 +15,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ });
+const hbs = exphbs.create({ helpers });
 
 // Set up sessions
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 300000,
+    maxAge: 100000000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',

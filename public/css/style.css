@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, main, body {
+  background-color: #0e506e;
 }
 
 header, .project:not(:last-child) {
@@ -15,8 +22,9 @@ header, .project:not(:last-child) {
   max-width: 1200px;
 }
 
-.link, h2 {
+.link, h2, li, .logo {
   font-family: 'Montserrat';
+  color: white;
 }
 
 .no-button {
@@ -24,32 +32,20 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: #f9fbfb;
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: #fbfbfb;
   text-decoration: underline;
 }
 
 .logo:link{
-  color: black;
+  color: rgb(247, 244, 244);
   text-decoration: none;
   font-family: 'Montserrat';
-}
-
-.logo:visited{
-  color: black;
-  text-decoration: none;
-}
-
-.logo:hover{
-  color: black;
-  text-decoration: none;
-  opacity: 0.7;
-  transition: 0.5s ease-in-out;
 }
 
 .navbar {
@@ -58,33 +54,23 @@ header, .project:not(:last-child) {
   position: relative;
   list-style-type: none;
   margin: 0;
-  font-size: 1em;
-  
+  font-size: 1em;  
 }
 
 .navbar a{
   text-decoration: none;
-  margin: 0 5px
-}
-
-.navbar a:visited{
-  text-decoration: none;
-  color: inherit;
-}
-
-.navbar a:hover{
-  text-decoration: none;
-  color: inherit;
+  margin: 0 5px;
+  color: white;
 }
 
 .post{
   margin: 20px 0;
-  border: 1px lightgrey solid;
+  border: 1px rgb(234, 226, 226);
   text-align: right;
 }
 
 .post-title{
-  background-color: lightgrey;
+  background-color: rgb(217, 214, 214);
   padding: 15px;
   margin-top: 0;
   text-align: left;
@@ -97,7 +83,7 @@ header, .project:not(:last-child) {
 }
 
 .post-title a:visited{
-  color: #617ab7;
+  color: #000608;
   text-decoration: none;
 }
 
@@ -109,7 +95,8 @@ header, .project:not(:last-child) {
 .post-content{
   padding: 10px !important;
   text-align: left !important;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
 }
 
 .post-body {
@@ -127,7 +114,9 @@ header, .project:not(:last-child) {
   text-align: right;
   margin-right: 20px;
   margin-bottom: 20px;
-  font-style: italic;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+
 }
 
 .post-username{
@@ -182,6 +171,7 @@ header, .project:not(:last-child) {
   padding: 10px;
   border: 1px #d3d3d3 solid;
   border-radius: 10px;
+  background-color: white;
 }
 
 .comment-button{

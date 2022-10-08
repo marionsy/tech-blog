@@ -4,42 +4,41 @@ const withAuth = require('../utils/auth');
 
 
 // Edit a post
-router.get('/edit/:id', withAuth, async (req, res) => {
+router.get('/dashboard/edit/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       attributes: [
         'id',
         'title',
-        'post_body',
-        'date_created',
+        'post_body'
       ],
-      include: [
-        {
-          model: User,
-          attributes: [
-            'username',
-          ],
-        },
-      ],
-      include: [
-        {
-          model: Comment,
-          attributes: [
-            'id',
-            'comment_body',
-            'date_created',
-            'user_id',
-            'post_id',
-          ],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: [
+      //       'username',
+      //     ],
+      //   },
+      // ],
+      // include: [
+      //   {
+      //     model: Comment,
+      //     attributes: [
+      //       'id',
+      //       'comment_body',
+      //       'date_created',
+      //       'user_id',
+      //       'post_id',
+      //     ],
+      //   },
+      // ],
     });
 
     const post = postData.get({ plain: true });
 
-    res.render('editpost', {
+    res.render('edit-post', {
       post,
-      loggedIn: req.session.loggedIn
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
