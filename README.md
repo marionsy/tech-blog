@@ -39,6 +39,7 @@
    * MySQL2
    * Sequelize
    * dotenv
+   * bcrypt
    * Handlebars.js
    
    ## Link to deployed Heroku application
