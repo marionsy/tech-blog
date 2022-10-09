@@ -1,3 +1,4 @@
+// Function to create a post
 const postFormHandler = async (event) => {
   event.preventDefault();
 

@@ -1,3 +1,4 @@
+// Function to edit post
 const editFormHandler = async (event) => {
   event.preventDefault();
 

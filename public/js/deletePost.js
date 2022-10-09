@@ -1,3 +1,4 @@
+// Function to delete a post
 const deleteFormHandler = async (event) => {
   event.preventDefault();
 

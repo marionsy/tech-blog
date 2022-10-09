@@ -12,26 +12,6 @@ router.get('/dashboard/edit/:id', withAuth, async (req, res) => {
         'title',
         'post_body'
       ],
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: [
-      //       'username',
-      //     ],
-      //   },
-      // ],
-      // include: [
-      //   {
-      //     model: Comment,
-      //     attributes: [
-      //       'id',
-      //       'comment_body',
-      //       'date_created',
-      //       'user_id',
-      //       'post_id',
-      //     ],
-      //   },
-      // ],
     });
 
     const post = postData.get({ plain: true });

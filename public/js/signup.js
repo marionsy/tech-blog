@@ -1,6 +1,7 @@
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
+  // Function to create an account
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();

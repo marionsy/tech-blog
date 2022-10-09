@@ -1,3 +1,4 @@
+// Function to log user in
 const loginFormHandler = async (event) => {
   event.preventDefault();
 

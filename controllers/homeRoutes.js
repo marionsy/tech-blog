@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 
 // Return page for a new post
 router.get('/post', withAuth, async (req, res) => {
-  res.render('createpost');
+  res.render('create-post');
 });
 
 // Get a single post
@@ -56,10 +56,8 @@ router.get('/post/:id', withAuth, async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
-
-    console.log('sjm POSt ' + JSON.stringify(post));
-
-    res.render('singlepost', { 
+    
+    res.render('single-post', { 
       post,
       logged_in: req.session.logged_in 
     });

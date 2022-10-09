@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -42,7 +42,7 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.logo:link{
+.logo:link {
   color: rgb(247, 244, 244);
   text-decoration: none;
   font-family: 'Montserrat';
@@ -57,19 +57,19 @@ header, .project:not(:last-child) {
   font-size: 1em;  
 }
 
-.navbar a{
+.navbar a {
   text-decoration: none;
   margin: 0 5px;
   color: white;
 }
 
-.post{
+.post {
   margin: 20px 0;
   border: 1px rgb(234, 226, 226);
   text-align: right;
 }
 
-.post-title{
+.post-title {
   background-color: rgb(217, 214, 214);
   padding: 15px;
   margin-top: 0;
@@ -77,22 +77,22 @@ header, .project:not(:last-child) {
   font-family: 'Lato', sans-serif;
 }
 
-.post-title a:link{
+.post-title a:link {
   color: #030305;
   text-decoration: none;
 }
 
-.post-title a:visited{
+.post-title a:visited {
   color: #000608;
   text-decoration: none;
 }
 
-.post-title a:hover{
+.post-title a:hover {
   text-decoration: none;
   color: #0e506e;
 }
 
-.post-content{
+.post-content {
   padding: 10px !important;
   text-align: left !important;
   font-family: 'Lato', sans-serif;
@@ -110,65 +110,44 @@ header, .project:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.post-author{
+.post-author {
   text-align: right;
   margin-right: 20px;
   margin-bottom: 20px;
   font-weight: bold;
   font-family: 'Lato', sans-serif;
-
 }
 
-.post-username{
+.post-username {
   font-weight: bold;
 }
 
-.dashboard-container{
+.dashboard-container {
   display: block;
   position: relative;
   margin-bottom: 20px;
 }
 
-.form-row{
-  margin-bottom: 20px;
-}
-
-.signup{
+.single-post-container {
   margin-top: 20px;
 }
 
-.edit-post-form{
-  margin-top: 20px;
-}
-
-.edit-post-form div{
-  margin-bottom: 20px;
-}
-
-.form-row {
-  font-family: 'Lato', sans-serif;
-}
-
-.single-post-container{
-  margin-top: 20px;
-}
-
-.comment-text{
+.comment-text {
   padding: 10px;
   font-family: 'Lato', sans-serif;
 }
 
-.comment-author{
+.comment-author {
   padding: 10px;
   font-weight: bold;
   font-family: 'Lato', sans-serif;
 }
 
-.dashboard-post{
+.dashboard-post {
   border: 1px #d3d3d3 solid;
 }
 
-.new-post-button{
+.new-post-button {
   margin: 20px 0;
 }
 
