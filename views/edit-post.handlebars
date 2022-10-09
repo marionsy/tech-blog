@@ -1,18 +1,28 @@
-<h2 class="card-header">Edit Post</h2>
-    <form class="card-body" id="edit-post">
-        <div class="form-row">
-        <label for="post-title" class="form-label">Title</label>
-        <input name="post-title" type="text" id="post-title" post-id={{post.id}} value="{{post.title}}" class="form-input form-control"/>
-        </div>
-
-        <div class="form-row">
-        <label class="form-label" for="content">Content</label>
-        <input name="content" type="text" id="content" value="{{post.post_body}}" class="form-input form-control"/>
-        </div>
-        <button type="submit" class="btn">Update Post</button>
-        <button type="button" class="delete-post-btn btn">Delete Post</button>
-    </form>
-
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <div class="card my-5">
+        <form class="card-body cardbody-color p-lg-5" id="edit-post">
+          <div class="text-center">
+            <h2 class="title pb-4" style="color:black">Edit Post</h2>
+          </div>
+          <div class="mb-3">
+            <label for="post-title" class="form-label">Title</label>
+            <input type="text" id="post-title" name="post-title" style="font-family:'Montserrat'" post-id={{post.id}}
+              value="{{post.title}}" class="form-input form-control">
+          </div>
+          <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <input type="text" id="content" name="content" style="font-family:'Montserrat'" value="{{post.post_body}}"
+              class="form-input form-control">
+          </div>
+          <button type="submit" class="btn" style="font-family: 'Lato'">Update Post</button>
+          <button type="button" class="delete-post-btn btn" style="font-family: 'Lato'">Delete Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script src="/js/editPost.js"></script>

@@ -19,7 +19,7 @@ header, .project:not(:last-child) {
 }
 
 .wrapper{
-  max-width: 1200px;
+  max-width: 1000px;
 }
 
 .link, h2, li, .logo {
@@ -74,7 +74,7 @@ header, .project:not(:last-child) {
   padding: 15px;
   margin-top: 0;
   text-align: left;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .post-title a:link{
@@ -157,6 +157,10 @@ header, .project:not(:last-child) {
   margin-bottom: 20px;
 }
 
+.form-row {
+  font-family: 'Lato', sans-serif;
+}
+
 .register{
   display: inline-block;
   margin-top: 20px;
@@ -170,8 +174,8 @@ header, .project:not(:last-child) {
   margin-top: 20px;
   padding: 10px;
   border: 1px #d3d3d3 solid;
-  border-radius: 10px;
   background-color: white;
+  font-family: 'Lato', sans-serif;
 }
 
 .comment-button{
@@ -180,11 +184,13 @@ header, .project:not(:last-child) {
 
 .comment-text{
   padding: 10px;
+  font-family: 'Lato', sans-serif;
 }
 
 .comment-author{
   padding: 10px;
   font-weight: bold;
+  font-family: 'Lato', sans-serif;
 }
 
 #signup button{
