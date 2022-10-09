@@ -129,24 +129,12 @@ header, .project:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.footer-margin{
-  margin-top: 50px;
-}
-
 .form-row{
   margin-bottom: 20px;
 }
 
 .signup{
   margin-top: 20px;
-}
-
-.signup-form div{
-  margin-bottom: 20px;
-}
-
-.login-form div{
-  margin-bottom: 20px;
 }
 
 .edit-post-form{
@@ -161,24 +149,7 @@ header, .project:not(:last-child) {
   font-family: 'Lato', sans-serif;
 }
 
-.register{
-  display: inline-block;
-  margin-top: 20px;
-}
-
 .single-post-container{
-  margin-top: 20px;
-}
-
-.comment-container{
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px #d3d3d3 solid;
-  background-color: white;
-  font-family: 'Lato', sans-serif;
-}
-
-.comment-button{
   margin-top: 20px;
 }
 
@@ -193,11 +164,6 @@ header, .project:not(:last-child) {
   font-family: 'Lato', sans-serif;
 }
 
-#signup button{
-  display: inline-block;
-  margin-top: 20px;
-  margin-left: 10px;
-}
 .dashboard-post{
   border: 1px #d3d3d3 solid;
 }
@@ -206,3 +172,7 @@ header, .project:not(:last-child) {
   margin: 20px 0;
 }
 
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}

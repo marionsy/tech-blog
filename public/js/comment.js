@@ -1,7 +1,7 @@
 const commentFormHandler = async (event) => {
   event.preventDefault();
 
-  const comment_body = document.querySelector('#comment').value.trim();
+  const comment_body = document.querySelector('#new-comment').value.trim();
   const post_id = document.querySelector('.post-title').getAttribute('post-id');
 
   if (comment_body && post_id) {
